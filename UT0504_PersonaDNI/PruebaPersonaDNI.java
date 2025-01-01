@@ -73,6 +73,4 @@ public class PruebaPersonaDNI{
 
 	}//MetodoPruebaPersonaTemporal
 
-}//PruebaDNI
-
-
+}//PruebaPersonaDNI
