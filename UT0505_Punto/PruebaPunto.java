@@ -47,7 +47,9 @@ public class PruebaPunto{
 		sPuntoBY=sTeclado.substring(sTeclado.lastIndexOf(",")+1, sTeclado.length());
 		System.out.println("sPuntoBX: " + sPuntoBX + " - sPuntoBY: " + sPuntoBY);
 
-		dDistancia=Punto.fDistancia2Ptos(sPuntoAX, sPuntoAY, sPuntoBX, sPuntoBY);
+		dDistancia=Punto.fDistancia2Ptos(Double.valueOf(sPuntoAX), Double.valueOf(sPuntoAY), Double.valueOf(sPuntoBX), Double.valueOf(sPuntoBY));
+		System.out.printf("La distancia entre el punto A (%s, %s) y el punto B (%s, %s) es de %-5d",
+			sPuntoAX, sPuntoAY, sPuntoBX, sPuntoBY, Math.round(dDistancia));
 
 
 
@@ -57,3 +59,4 @@ public class PruebaPunto{
 	}//main
 
 }//PruebaPunto
+
