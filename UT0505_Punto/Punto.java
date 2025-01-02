@@ -63,15 +63,16 @@ public class Punto{
 		return dResultado;
 	}//fDistancia
 
+
 	/**
-	* Método encargado de calcular la distancia de un punto pasado por parámetros con respecto al punto del objeto
+	* Método static encargado de calcular la distancia de un punto pasado por parámetros con respecto a un segundo punto pasado por parámetros
 	* @param dXpuntoA [double] --> Informa de la coordenada X del punto A que se requiere calcular
 	* @param dYpuntoA [double] --> Informa de la coordenada Y del punto A que se requiere calcular	
 	* @param dXpuntoB [double] --> Informa de la coordenada X del punto B que se requiere calcular
 	* @param dYpuntoB [double] --> Informa de la coordenada Y del punto B que se requiere calcular	
 	* @return dResultado [double] --> Devuelve la distancia entre el punto X e Y del objeto con respecto a las coordenadas pasadas por parámetro
 	*/
-	public double fDistancia2Ptos(double dXpuntoA, double dYpuntoA, double dXpuntoB, double dYpuntoB){
+	public static double fDistancia2Ptos(double dXpuntoA, double dYpuntoA, double dXpuntoB, double dYpuntoB){
 		double dResultado=0.0;
 		
 		try{
