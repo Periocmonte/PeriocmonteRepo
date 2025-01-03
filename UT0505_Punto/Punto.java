@@ -3,7 +3,8 @@ import java.lang.Math;
 
 public class Punto{
 	private double dX=0.0, dY=0.0;
-	private static int iNumObjPuntos=0;
+	public static int iNumObjPuntos=0;
+	public static final String sNombreObj="Punto";
 
 	//Constructor
 	public Punto(){
@@ -45,7 +46,27 @@ public class Punto{
 	}//fgetValorY
 
 	/**
-	* Método encargado de calcular la distancia de un punto pasado por parámetros con respecto al punto del objeto
+	* Método encargado de calcular la distancia de un punto pasado el objeto por parámetros con respecto al punto del objeto
+	* @param objPtoB [Punto] --> Objeto del 2º punto
+	* 
+	* @return dResultado [double] --> Devuelve la distancia entre el punto X e Y del objeto con respecto a las coordenadas pasadas por parámetro
+	*/
+	public double fDistancia(Punto objPtoB){
+		double dResultado=0.0;
+		
+		try{
+			//Fórmula a aplicar Raiz_cuadrada [ (x2-x1)^2 + (y2-y1)^2 ]
+			dResultado=Math.sqrt(Math.pow((objPtoB.fgetValorX() - fgetValorX()), 2) + Math.pow((objPtoB.fgetValorY() - fgetValorY()), 2));
+		}catch(Exception e){
+			System.out.println("fDistancia() - Error al cálcular la distancia entre los 2 puntos. La distancia se resolverá con valor 0.0");
+			dResultado=0.0;
+		}//try e
+		return dResultado;
+	}//fDistancia
+
+
+	/**
+	* Método encargado de calcular la distancia de un punto pasado sus coordenadas X e Y por parámetros con respecto al punto del objeto
 	* @param dXpuntoB [double] --> Informa de la coordenada X del punto B que se requiere calcular
 	* @param dYpuntoB [double] --> Informa de la coordenada Y del punto B que se requiere calcular	
 	* @return dResultado [double] --> Devuelve la distancia entre el punto X e Y del objeto con respecto a las coordenadas pasadas por parámetro
