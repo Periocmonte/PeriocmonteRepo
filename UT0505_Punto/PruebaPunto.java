@@ -80,7 +80,7 @@ public class PruebaPunto{
 		System.out.printf("\nTras eliminar los objetos objPuntoR y objPuntoS, el número de objetos instanciados de la clase Punto actualmente es: %d", 
 					objPuntoP.fgetNumObjetos());
 
-		System.out.println("\n\n*********** FIN PruebaPunto ************\n");
+		System.out.println("\n\n************ FIN PruebaPunto *************\n");
 		
 	}//main
 
