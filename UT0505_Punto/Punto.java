@@ -3,8 +3,8 @@ import java.lang.Math;
 
 public class Punto{
 	private double dX=0.0, dY=0.0;
-	public static int iNumObjPuntos=0;
-	public static final String sNombreObj="Punto";
+	private static int iNumObjPuntos=0;
+	private static final String sNOMBREOBJ="Punto";
 
 	//Constructor
 	public Punto(){
@@ -44,6 +44,22 @@ public class Punto{
 	public double fgetValorY(){
 		return this.dY;
 	}//fgetValorY
+	
+	/**
+	 * Método encargado de devolver el nombre del objeto
+	 * @return sNOMBREOBJ [String] --> Devuelve el nombre común de los objetos
+	 */
+	public String fgetNombre() {
+		return sNOMBREOBJ;			
+	}//fgetNombre
+	
+	/**
+	 * Método encargado de devolver el número de objetos creados
+	 * @return iNumObjPuntos [int] --> Devuelve el número de objetos Punto creados
+	 */
+	public int fgetNumObjetos() {
+		return iNumObjPuntos;			
+	}//fgetNumObjetos
 
 	/**
 	* Método encargado de calcular la distancia de un punto pasado el objeto por parámetros con respecto al punto del objeto
