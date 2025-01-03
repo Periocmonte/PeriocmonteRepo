@@ -68,16 +68,17 @@ public class PruebaPunto{
 			sPuntoAX, sPuntoAY, sPuntoBX, sPuntoBY, Math.round(dDistancia));
 
 		//Mostramos el nombre común de todos los objetos
-		System.out.printf("\nEl nombre común del objeto objPuntoP es [%s]", objPuntoP.sNombreObj);
-		System.out.printf("\nEl nombre común del objeto objPuntoQ es [%s]", objPuntoQ.sNombreObj);
-		System.out.printf("\nEl nombre común del objeto objPuntoR es [%s]", objPuntoR.sNombreObj);
-		System.out.printf("\nEl nombre común del objeto objPuntoS es [%s]", objPuntoS.sNombreObj);
+		System.out.printf("\nEl nombre común del objeto objPuntoP es [%s]", objPuntoP.fgetNombre());
+		System.out.printf("\nEl nombre común del objeto objPuntoQ es [%s]", objPuntoQ.fgetNombre());
+		System.out.printf("\nEl nombre común del objeto objPuntoR es [%s]", objPuntoR.fgetNombre());
+		System.out.printf("\nEl nombre común del objeto objPuntoS es [%s]", objPuntoS.fgetNombre());
 
 		//Mostramos el número de objetos instanciados de la clase Punto
-		System.out.printf("\n\nEl número de objetos instanciados de la clase Punto es: %d", objPuntoP.iNumObjPuntos);
+		System.out.printf("\n\nEl número de objetos instanciados de la clase Punto es: %d", objPuntoP.fgetNumObjetos());
 		objPuntoR.finalize();
 		objPuntoS.finalize();
-		System.out.printf("\nTras eliminar los objetos objPuntoR y objPuntoS, el número de objetos instanciados de la clase Punto actualmente es: %d", objPuntoP.iNumObjPuntos);
+		System.out.printf("\nTras eliminar los objetos objPuntoR y objPuntoS, el número de objetos instanciados de la clase Punto actualmente es: %d", 
+					objPuntoP.fgetNumObjetos());
 
 		System.out.println("\n\n*********** FIN PruebaPunto ************\n");
 		
