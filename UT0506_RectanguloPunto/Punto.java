@@ -124,6 +124,15 @@ public class Punto{
 	}//fDistancia
 
 	/**
+	* Método encargado de presentar la información del Punto
+	*
+	*/
+	@Override
+	public String toString(){
+		return " con nombre " + this.fgetNombre() + " y coordenadas (" + this.fgetValorX() + ", " + this.fgetValorY() + ")";
+	}//toString
+
+	/**
 	* Método encargado de restar 1 a la variable iNumObjPuntos cuando se elimine un objeto Punto
 	*
 	*/
