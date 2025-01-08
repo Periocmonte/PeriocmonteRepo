@@ -2,7 +2,7 @@ package UT05_CuentaBancaria;
 
 private class CuentaBancaria{
 	private String sNombreTit="", sNumCuenta="";
-	private char cTipoCuenta=' '; //F=Fijo, S=Simple, V=Variable y C=Compuesto
+	private char cTipoInteres=' '; //F=Fijo, S=Simple, V=Variable y C=Compuesto
 	private double dSaldo=0.0;
 	private String aTiposCuenta={"Fijo", "Simple", "Variable", "Compuesto"};
 
@@ -11,14 +11,14 @@ private class CuentaBancaria{
 	public CuentaBancaria(){
 		this.sNombreTit="";
 		this.sNumCuenta="";
-		this.cTipoCuenta=' ';
+		this.cTipoInteres=' ';
 		this.dSaldo=0.0;
 	}//Constructor por defecto
 
-	public CuentaBancaria(String sNombreTit, String sNumCuenta, char cTipoCuenta, double dIngreso){
+	public CuentaBancaria(String sNombreTit, String sNumCuenta, char cTipoInteres, double dIngreso){
 		this.fsetNombreTit(sNombreTit);
 		this.fsetNumCuenta(sNumCuenta);
-		this.fsetTipoCuenta(cTipoCuenta);
+		this.fsetTipoCuenta(cTipoInteres);
 		this.fIngreso(dIngreso);
 	}//Constructor por parámetros
 
@@ -40,11 +40,11 @@ private class CuentaBancaria{
 	}//fsetNumCuenta
 
 	public char fgetTipoCuenta(){
-		return cTipoCuenta;
+		return cTipoInteres;
 	}//fgetTipoCuenta
 
-	public void fsetTipoCuenta(char cTipoCuenta){
-		this.cTipoCuenta=cTipoCuenta;
+	public void fsetTipoCuenta(char cTipoInteres){
+		this.cTipoInteres=cTipoInteres;
 	//fsetTipoCuenta
 
 	public double fgetSaldo(){
@@ -59,12 +59,17 @@ private class CuentaBancaria{
 	* Método encargado de incrementar el saldo existente en la cantidad pasada por parámetro
 	*
 	* @param dIngreso [double] --> Informará de la cantidad que debe incrementarse el atributo dSaldo
+	* @return bResultado [boolean] --> Devuelve TRUE se ha podido realizar el ingreso y FALSE si ha fallado el ingreso
 	*/
-	public void fIngreso(double dIngreso){
+	public boolean fIngreso(double dIngreso){
+		boolean bResultado=false;
+
 		if (dIngreso<0){
 			System.out.println("El importe facilitado debe superar los 0 €");
+			bResultado=false;
 		}else{
-			this.dSaldo=+dIngreso;
+			this.dSaldo+=dIngreso;
+			bResultado=true;
 		}//if dingreso<0
 	}//fIngreso
 
@@ -81,7 +86,7 @@ private class CuentaBancaria{
 		}else if(dExtracción>dSaldo){
 			System.out.println("La cantidad a extraer no puede superar el importe de " + dSaldo + " de la cuenta");
 		}else{
-			dSaldo=-dExtraccion;
+			dSaldo-=dExtraccion;
 			System.out.println("Se extraen " + dExtraccion + " € de saldo. Finalmente quedan " + dSaldo + " € de saldo final");
 		}//dExtraccion?
 	}//fReintegro
