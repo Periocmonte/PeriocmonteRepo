@@ -4,7 +4,7 @@ private class CuentaBancaria{
 	private String sNombreTit="", sNumCuenta="";
 	private char cTipoInteres=' '; //F=Fijo, S=Simple, V=Variable y C=Compuesto
 	private double dSaldo=0.0;
-	private String aTiposCuenta={"Fijo", "Simple", "Variable", "Compuesto"};
+	private String aTiposCuenta[]={"Fijo", "Simple", "Variable", "Compuesto"};
 
 
 	//Constructor por defecto
@@ -40,12 +40,42 @@ private class CuentaBancaria{
 	}//fsetNumCuenta
 
 	public char fgetTipoCuenta(){
-		return cTipoInteres;
+		return this.cTipoInteres;
 	}//fgetTipoCuenta
+
+	/**
+	* Método encargado de devolver en formato cadena el tipo de interés de la cuentas. 
+	* En caso de no especificar el tipo de Tipo de interés, por defecto se devolverá como Simple
+	*
+	* @param cTipo [char] --> Caracter identificador del tipo de interes. F=Fijo, S=Simple, V=Variable y C=Compuesto
+	* @return sTipoInteres [String] --> Devuelve la descripción del tipo de interés de la cuenta. 
+	*/
+	public String fgetDescripcionTipoCuenta(){
+		String sTipoInteres="";
+
+		switch (this.cTipoInteres){
+			case 'F':
+				sTipoInteres="Fijo";
+				break;	
+			case 'S':
+				sTipoInteres="Simple";
+				break;	
+			case 'V':
+				sTipoInteres="Variable";
+				break;	
+			case 'C':
+				sTipoInteres="Compuesto";
+				break;	
+			default:
+				sTipoInteres="Simple";
+				break;	
+		}//switch
+		return sTipoInteres;
+	}//fgetDescripcionTipoCuenta
 
 	public void fsetTipoCuenta(char cTipoInteres){
 		this.cTipoInteres=cTipoInteres;
-	//fsetTipoCuenta
+	}//fsetTipoCuenta
 
 	public double fgetSaldo(){
 		return this.dSaldo;
@@ -65,12 +95,14 @@ private class CuentaBancaria{
 		boolean bResultado=false;
 
 		if (dIngreso<0){
-			System.out.println("El importe facilitado debe superar los 0 €");
+			System.out.println("                        --> El importe facilitado debe superar los 0 €");
 			bResultado=false;
 		}else{
 			this.dSaldo+=dIngreso;
 			bResultado=true;
+			System.out.println("                        --> Se ingresan " + dIngreso + " € al saldo. Finalmente el saldo es de " + this.dSaldo + " €");
 		}//if dingreso<0
+		return bResultado;
 	}//fIngreso
 
 	/**
@@ -80,14 +112,30 @@ private class CuentaBancaria{
 	*
 	* @param dExtraccion [double] --> Cantidad a extraer el montante almacenado en la variable dSaldo
 	*/
-	public void fReintegro(double dExtraccion){
+	public boolean fReintegro(double dExtraccion){
+		boolean bResultado=false;
+		
 		if (dExtraccion<1){
-			System.out.println("La cantidad a extraer debe superior a 0");
-		}else if(dExtracción>dSaldo){
-			System.out.println("La cantidad a extraer no puede superar el importe de " + dSaldo + " de la cuenta");
+			System.out.println("                        --> La cantidad a extraer debe superior a 0");
+			bResultado=false;
+		}else if(dExtraccion>this.dSaldo){
+			System.out.println("                        --> La cantidad a extraer no puede superar el importe de " + this.dSaldo + " de la cuenta");
+			bResultado=false;
 		}else{
-			dSaldo-=dExtraccion;
-			System.out.println("Se extraen " + dExtraccion + " € de saldo. Finalmente quedan " + dSaldo + " € de saldo final");
+			this.dSaldo-=dExtraccion;
+			System.out.println("                        --> Se extraen " + dExtraccion + " € de saldo. Finalmente el saldo es de " + this.dSaldo + " €");
+			bResultado=true;
 		}//dExtraccion?
+		
+		return bResultado;
 	}//fReintegro
+	
+	@Override
+	public String toString() {
+		return  "Nombre del Titular: " + this.fgetNombreTit() + "\r\n"+
+				"Número de cuenta: " + this.fgetNumCuenta() + "\r\n"+
+				"Tipo de Interés: " + this.fgetDescripcionTipoCuenta() + "\r\n"+
+				"Saldo: " + this.fgetSaldo() + "\r\n";
+	}//toString
+	
 }//CuentaBancaria
