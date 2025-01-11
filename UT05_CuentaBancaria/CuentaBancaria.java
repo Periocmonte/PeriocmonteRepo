@@ -4,8 +4,6 @@ private class CuentaBancaria{
 	private String sNombreTit="", sNumCuenta="";
 	private char cTipoInteres=' '; //F=Fijo, S=Simple, V=Variable y C=Compuesto
 	private double dSaldo=0.0;
-	private String aTiposCuenta[]={"Fijo", "Simple", "Variable", "Compuesto"};
-
 
 	//Constructor por defecto
 	public CuentaBancaria(){
