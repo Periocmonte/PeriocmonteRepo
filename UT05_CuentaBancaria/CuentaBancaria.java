@@ -1,6 +1,6 @@
 package UT05_CuentaBancaria;
 
-private class CuentaBancaria{
+public class CuentaBancaria{
 	private String sNombreTit="", sNumCuenta="";
 	private char cTipoInteres=' '; //F=Fijo, S=Simple, V=Variable y C=Compuesto
 	private double dSaldo=0.0;

@@ -6,21 +6,23 @@
 * 
 */
 
-package Ejercicio_UT05;
+package UT05_CuentaBancaria;
 
 import java.util.Scanner;
 
-public class PruebaCuantaBancaria{
+public class PruebaCuentaBancaria{
 	public static void main (String[] args){
 		boolean bSalir=false;
 		String sTeclado="";
 		int iImporte=0;
-		String sAccion=""; 	// Donde sAccion=I --> Ingresar
+		String sAccion=""; 		// Donde sAccion=I --> Ingresar
 				       		//	 sAccion=S --> Sacar dinero
 		
 
+		System.out.println("\n\n**************** INICIO DEL PROCESO CUENTA BANCARIA ***********************");
+
 		//Requisito 1 - Instanciar Objeto CuentaBancaria inicializado con 100€ 
-		CuentaBancaria objCB=new CuentaBancaria("Antoñito Pakito", "ES6695-564-54-23", 'F', 100);
+		CuentaBancaria objCB=new CuentaBancaria("Pedro Jiménez", "ES6695-564-54-23", 'F', 100);
 		//System.out.println("objCB.fgetNumCuenta():" + objCB.fgetNumCuenta());
 		//System.out.println("objCB.fgetNombreTit():" + objCB.fgetNombreTit());
 		//System.out.println("objCB.fgetDescripcionTipoCuenta():" + objCB.fgetDescripcionTipoCuenta());
@@ -115,4 +117,4 @@ public class PruebaCuantaBancaria{
 		}while(!bSalir);
 		System.out.println("**************** FIN DEL PROCESO ***********************");
 	}//main
-}//PruebaCuantaBancaria
+}//PruebaCuentaBancaria
