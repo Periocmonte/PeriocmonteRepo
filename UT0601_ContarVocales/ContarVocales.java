@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 package UT0601_ContarVocales;
+=======
+package fp_Programacion_Clases_UT06.UT0601_ContarVocales;
+>>>>>>> main
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+<<<<<<< HEAD
 public class ContarVocales{
+=======
+public class ContarVocales {
+>>>>>>> main
 	private int iNumVocales=0, iNumVocalesMinusculas=0, iNumVocalesMayusculas=0, iNumVocalesTildes=0;
 	private String sTexto="";
 	

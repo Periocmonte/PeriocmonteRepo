@@ -4,12 +4,20 @@
 * 	- Debe considerar mayúsculas como minúsculas y tiles
 */
 
+<<<<<<< HEAD
 
 package UT0601_ContarVocales;
 
 import java.util.Scanner;
 
 public class ProbarContarVocales{
+=======
+package fp_Programacion_Clases_UT06.UT0601_ContarVocales;
+
+import java.util.Scanner;
+
+public class ProbarContarVocales {
+>>>>>>> main
 	public static void main(String[] args){
 		String sTeclado="";
 		boolean bSeguir=false;
