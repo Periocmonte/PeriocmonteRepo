@@ -51,17 +51,31 @@ public class ConteoAbecedario{
 	
 	private void fImprimeRecuento() {
 		String sLetrasVisualizadas="";
+		String sListadoLetras="";
+		String sListadoVeces="";
+		boolean bInicio=true;
 		//Recorremos el array de chars (cLetras) del texto introducido
 		for(int i=0; i<cLetras.length; i++) {
 			//Comprobamos si la letra analizada ya ha sido registrada
-			if(String.valueOf(cLetras[i]).indexOf(sLetrasVisualizadas)<1) {
+			if(sLetrasVisualizadas.indexOf(cLetras[i])<0) {
 				//Registramos la letra analizada
 				sLetrasVisualizadas=sLetrasVisualizadas+cLetras[i];
-				System.out.println("cLetras["+i+"]:" + cLetras[i] + "(" + (int)cLetras[i] + ")");
-				System.out.println("Veces: " + aiNum[(int)cLetras[i]][0]);
+				//System.out.println("cLetras["+i+"]:" + cLetras[i] + "(" + (int)cLetras[i] + ")");
+				//System.out.println("Veces: " + aiNum[(int)cLetras[i]][0]);
+				//Preparamos la salida de la consola
+				if(!bInicio) {
+					sListadoLetras+=" - ";
+					sListadoVeces+=" - ";
+				}//if bInicio?
+				sListadoLetras+=cLetras[i];
+				sListadoVeces+=aiNum[(int)cLetras[i]][0];
+				//Identificamos que ya no es la primera letra encontrada	
+				bInicio=false;
 			}//if cLetras está en sLetraVisualizadas?
-
 		}//for i
+		//Escribimos el resultado en la salida de la consola
+		System.out.println(sListadoLetras);
+		System.out.println(sListadoVeces);
 	}//fImprimeRecuento
 
 	@Override
