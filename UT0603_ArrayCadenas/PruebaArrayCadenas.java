@@ -41,13 +41,13 @@
 */
 
 
-package UT0603_ArrayCadenas;
+package fp_Programacion_Clases_UT06.UT0603_ArrayCadenas;
 
-public class PruebaArrayCadenas{
+public class PruebaArrayCadenas {
+
 	public static void main(String[] args){
 		System.out.println(" ************* Array Cadenas *************");
 
-		ArrayCadenas objACadenas=new ArrayCadenas();
 		String[] asCad1=new String[3];
 		asCad1[0]="Pepe";
 		asCad1[1]="Ana";
@@ -58,6 +58,17 @@ public class PruebaArrayCadenas{
 		asCad2[1]="Mónica";
 		asCad2[2]="Jose";
 
+		ArrayCadenas objACadenas=new ArrayCadenas(asCad1, asCad2);
+		//Imprimimos el contenido de los array
+		objACadenas.fPrintCadena(1);
+		objACadenas.fPrintCadena(2);
+		//Ordenamos los arrays
+		objACadenas.fOrdenaCadena(asCad1);
+		objACadenas.fPrintCadena(1);
+		objACadenas.fOrdenaCadena(asCad2);
+		objACadenas.fPrintCadena(2);
+		
+		
 		System.out.println(" ************* FIN Array Cadenas *************");
 	}//main
 }//PruebaArrayCadenas
